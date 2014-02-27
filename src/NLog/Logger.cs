@@ -61,6 +61,7 @@ namespace NLog
         {
         }
 
+        //test 
         /// <summary>
         /// Occurs when logger configuration changes.
         /// </summary>
