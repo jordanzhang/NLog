@@ -501,6 +501,18 @@ namespace NLog
             }
         }
 
+        [CLSCompliant(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [StringFormatMethod("message")]
+        public void Log(LogLevel level, string message, uint argument, string linkedStringKey, int linkedIntKey)
+        {
+            if (this.IsEnabled(level))
+            {
+                this.WriteToTargets(level, message, new object[] { argument });
+            }
+        }
+
+
         /// <summary>
         /// Writes the diagnostic message at the specified level using the specified value as a parameter and formatting it with the supplied format provider.
         /// </summary>
